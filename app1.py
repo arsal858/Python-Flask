@@ -1,7 +1,10 @@
-from flask import flask
+from flask import Flask
 
-app=flask(__name__)
+app=Flask(__name__)
 
-@app.route('basic html page')
-def basic_html_page():
-    return '<h1>My first Page Creation in Flask</h1>'
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/dynamic/<user_input>")
+def dynamic(user_input):
+    return f'The user entered some {user_input}'
